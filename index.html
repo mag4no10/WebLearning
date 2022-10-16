@@ -2,6 +2,12 @@
 <html>
 <head>
   <title>Mi primera web</title> <!--Titulo de la web-->
+  <!--Ignorar por el momento-->
+  <style>
+    table, th, td {
+      border: 1px solid black;
+    }
+  </style>
 </head>
 <body>
   <h1>Mi primer heading</h1> <!--Titulos 1-6-->
@@ -23,9 +29,107 @@
   </p>
   <!--Abre en una pestaña nueva, la url de debajo-->
   <a target="blank" href="https://google.es">Ir a google</a>
-  <br>
+  <br> <!--Salto de linea-->
   <!--Subir imagen, no hace falta poner height ya que se mantiene 
-  la relacion 16/9-->
+  la relacion 16/9
   <img src="img/ice_cream.jpeg" width="400"/> 
+  -->
+
+  <!--Unordered List-->
+  <ul>
+    <li>Elemento 1</li>
+    <li>Elemento 2</li>
+    <li>Elemento 3</li>
+    <li>Elemento 4</li>
+  </ul>
+
+  <!--Ordered List-->
+  <ol>
+    <li value="50">Elemento 1</li> <!--Va desde 50...-->
+    <li>Elemento 2</li>
+    <li>Elemento 3</li>
+    <li>Elemento 4</li>
+    <ol>
+      <li style="list-style-type: lower-roman;">Subelemento 1</li>
+      <li style="list-style-type: lower-greek;">Subelemento 2</li>
+      <li style="list-style-type: lower-roman;">Subelemento 3</li>
+      <li style="list-style-type: lower-alpha;">Subelemento 4</li>
+    </ol>
+  </ol>
+
+  <form action="/formulario" method="POST">
+    <!--
+    Va a la ruta /formulario cuando se le da a submit
+    Metodos: GET (max 255 caracteres) (formularios cortos)
+    POST (ilimitado)
+    -->
+    <label for="name">Nombre:</label> <!--for "click al nombre y lleva al campo"-->
+    <!--Value: valor por defecto | type: text, password, email, submit, radio, checkbox, file
+    id: tiene que coincidir con el for | name: nombre que tiene el campo una vez lo redireccionemos
+    placeholder: lo que aparece en gris en el fondo-->
+    <input value="chanchito" type="text" id="name" name="nombre" placeholder="Escriba su nombre"/>
+    <br>
+    <label for="apellido">Apellido:</label>
+    <input type="text" id="apellido" name="apellido" placeholder="Escriba su apellido"/>
+    <br>
+    <label for="comentario">Comentario:</label>
+    <!--Area de texto: columnas... filas... id tiene que coincidir con el for
+    -->
+    <textarea cols="50" rows="10" id="comentario" 
+      placeholder="Escriba un comentario" name="comentario">este es un valor por defecto
+    </textarea>
+    <br>
+    <!--type: button(comportamiento con js), reset(actualiza la pagina), submit(subir un archivo), menu-->
+    <button type="button" >Boton</button>
+    <button type="reset" >Reset</button>
+    <button type="submit" >Submit</button>
+    <button type="menu">Menu</button>
+    <!--<button type="button"><img src="img/ice_cream.jpeg"></button> --> 
+  </form>
+  <br>
+  <table style="width:300px">
+    <tr> <!--Table Row-->
+      <th>Producto</th> <!--Table Header-->
+      <th>Precio</th>
+    </tr>
+    <tr>
+      <td>Besito</td>
+      <td>Agotado!</td>
+    </tr>
+    <tr>
+      <td>Chanchito feliz</td>
+      <td>10.95</td>
+    </tr>    
+    <tr>
+      <td>Chanchito muy muy feliz</td>
+      <td>20.95</td>
+    </tr>
+  </table>
+  <br>
+  <label>Ahora tabla con scroll</label>
+  <table style="width:300px"> <!--Tabla que permite scroll-->
+    <thead>
+      <th>Producto</th>
+      <th>Precio</th>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Besito</td>
+        <td>Agotado!</td>
+      </tr>
+      <tr>
+        <td>Chanchito feliz</td>
+        <td>10.95</td>
+      </tr>    
+      <tr>
+        <td>Chanchito muy muy feliz</td>
+        <td>20.95</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <td></td>
+      <td>Total: 31.90</td>
+    </tfoot>
+  </table>
 </body>
 </html>
